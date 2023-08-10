@@ -1,0 +1,25 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_BASE_URL: http://localhost:8000
+    env_file:
+      - ./frontend/.env
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      NODE_ENV: development
+      PORT: 8000
+      DATABASE_URI: mongodb+srv://admin:dlid0a5omIcQeOlv@cluster0.clgezlj.mongodb.net/?retryWrites=true&w=majority
+      ACCESS_TOKEN_SECRET: 88573d2111724ef2e763894b5f0f127c591b2c9c6f7b6e5184ebc42bb0ba0b0807f831deb4fdfdc471107809220f4b1350f23b4962ece54e806f85073d35f773
+      REFRESH_TOKEN_SECRET: 3594f9fbd18461b66cc58dbdd142a463cf39c62046cdafb39a2ec394cfa8eb01165003f2abbb453f144a6313460b9fdd6ca75e99921c91c43490919047bc1f64
+    env_file:
+      - ./backend/.env

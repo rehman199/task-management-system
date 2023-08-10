@@ -1,0 +1,14 @@
+# Exclude node_modules directory
+
+node_modules
+
+# Exclude development and debugging files
+
+.git
+.vscode
+\*.log
+
+# Exclude build artifacts
+
+dist
+build
