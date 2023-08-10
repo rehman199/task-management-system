@@ -9,6 +9,7 @@ const errorHandler = require("./middlewares/errorHandler");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const corsOptions = require("./config/cors");
+const requestLogger = require("./middlewares/requestLoggerMiddleware");
 
 // INITIALIZE APP
 const PORT = process.env.PORT;
@@ -23,6 +24,7 @@ connectDB()
 app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
+app.use(requestLogger);
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", verifyToken, taskRoutes);
 
