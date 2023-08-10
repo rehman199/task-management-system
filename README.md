@@ -7,7 +7,9 @@
 - [Installation](#installation)
 - [Setting Up Environment Variables](#setting-up-environment-variables)
 - [Usage](#usage)
+- [Docker Configuration: running-the-application-with-docker](#docker-configuration-running-the-application-with-docker)
 - [Running Tests](#running-tests)
+- [Live Deployments](#live-deployments)
 - [Technologies](#technologies)
 - [Project Structure](#project-structure)
 - [License](#license)
@@ -78,6 +80,47 @@ Before you begin, ensure you have the following prerequisites:
 
 ---
 
+## Docker Configuration: Running the Application with Docker
+
+The Docker setup for this application is defined in the `docker-compose.yml` file.
+
+1. Clone this repository to your local machine:
+
+   ```sh
+   git clone https://github.com/rehman199/task-management-system.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```sh
+   cd task-management-system
+   ```
+
+3. Create `.env` files for frontend and backend as described in the above environment section.
+
+4. Build and run Docker containers in "task-management-system" directory:
+
+   ```sh
+   docker-compose up --build
+   ```
+
+   This command will build Docker images for the frontend and backend services and start the containers.
+
+5. Access the Application:
+
+   - Frontend: [http://localhost:3000](http://localhost:3000)
+   - Backend API: [http://localhost:8000](http://localhost:8000)
+
+6. Stopping the Containers:
+
+   To stop the running containers, press `Ctrl+C` in the terminal where you started the containers. Alternatively, run:
+
+   ```sh
+   docker-compose down
+   ```
+
+...
+
 ## Running Tests
 
 The `tests` directory within the `backend` folder contains all the backend test files.
@@ -99,6 +142,15 @@ To run the tests for the backend, follow these steps:
    ```
 
 Jest will automatically discover and execute all the test files within the `tests` directory and provide you with test results and coverage information.
+
+---
+
+## Live Deployments
+
+You can access live deployments of the Task Management System application at the following links:
+
+- Frontend: [Live Frontend Link](https://task-management-system-lbcn.vercel.app/)
+- Backend API: [Live Backend Link](https://task-management-system-backend-dx56.onrender.com)
 
 ---
 
