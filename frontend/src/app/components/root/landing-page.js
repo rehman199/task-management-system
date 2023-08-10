@@ -9,23 +9,25 @@ export default function LandingPage() {
       display="flex"
       alignItems="center"
       flexDirection="column"
+      justifyContent="center"
       gap={2}
       flex={1}
       sx={{
         backgroundImage: "url(/images/red-envelopes.jpg) ",
         backgroundSize: "cover",
+        padding: { xs: "1rem", sm: "3rem" },
+        textAlign: "center",
       }}
     >
       <Typography
         component="h1"
-        fontSize={64}
+        fontSize={{ xs: "3rem", sm: "4rem", md: "5rem" }}
         color="white"
-        width="50%"
-        mt="10%"
+        width="80%"
       >
         Managing Your Tasks Just Got a Lot Easier
       </Typography>
-      <Typography component="p" color="white">
+      <Typography component="p" color="white" width="80%">
         Try our reliable task management system today and feel the difference it
         makes for your team
       </Typography>

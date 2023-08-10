@@ -1,5 +1,4 @@
 const Task = require("../models/tasksModel");
-const jwt = require("jsonwebtoken");
 const { decodedUser } = require("../utils/jwtHelper");
 
 const addNewTask = async (req, res, next) => {
@@ -16,10 +15,6 @@ const addNewTask = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-};
-
-const getTask = (req, res, next) => {
-  res.send({ task: {} });
 };
 
 const fetchTasks = async (req, res, next) => {
@@ -71,4 +66,4 @@ const deleteTask = async (req, res, next) => {
   }
 };
 
-module.exports = { addNewTask, fetchTasks, getTask, deleteTask, updateTask };
+module.exports = { addNewTask, fetchTasks, deleteTask, updateTask };

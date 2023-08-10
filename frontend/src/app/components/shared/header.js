@@ -31,13 +31,20 @@ function Header() {
         <Container maxWidth="xl">
           <Toolbar
             disableGutters
-            sx={{ display: "flex", justifyContent: "space-between" }}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: { xs: "column", sm: "row" },
+              alignItems: { xs: "center", sm: "flex-start" },
+              py: { xs: 2, sm: 3 },
+            }}
           >
             <Typography
               variant="h6"
               sx={{
-                mr: 2,
-                display: { md: "flex" },
+                mr: { xs: 0, sm: 2 },
+                mb: { xs: 2, sm: 0 },
+                display: { xs: "block", sm: "flex" },
                 fontWeight: 700,
                 letterSpacing: 1.5,
               }}
@@ -47,7 +54,7 @@ function Header() {
 
             <Box component="div" display="flex" gap={1}>
               {isLoggedIn ? (
-                <Tooltip title="log out" onClick={logoutUser}>
+                <Tooltip title="Log Out" onClick={logoutUser}>
                   <IconButton sx={{ p: 0 }}>
                     <Avatar alt="R" src="/" sx={{ bgcolor: "warning.main" }} />
                   </IconButton>
@@ -82,4 +89,5 @@ function Header() {
     </>
   );
 }
+
 export default Header;

@@ -1,7 +1,6 @@
 require("dotenv").config();
-
 const express = require("express");
-const connectDB = require("./config/db");
+const connectDBAndStartServer = require("./config/db");
 const taskRoutes = require("./routes/tasksRoutes");
 const authRoutes = require("./routes/authRoutes");
 const { verifyToken } = require("./middlewares/authMiddleware");
@@ -14,11 +13,9 @@ const requestLogger = require("./middlewares/requestLoggerMiddleware");
 // INITIALIZE APP
 const PORT = process.env.PORT;
 const app = express();
-connectDB()
-  .then(() =>
-    app.listen(PORT, () => console.log("Server Connected to port " + PORT))
-  )
-  .catch((err) => console.log(err));
+
+// CONNECT TO SERVER
+if (process.env.NODE_ENV !== "test") connectDBAndStartServer(app, PORT);
 
 // MIDDLEWARE
 app.use(cors(corsOptions));
@@ -28,4 +25,7 @@ app.use(requestLogger);
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", verifyToken, taskRoutes);
 
+// ERROR HANDLER MIDDLEWARE
 app.use(errorHandler);
+
+module.exports = app;

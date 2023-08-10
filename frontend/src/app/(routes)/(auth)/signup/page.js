@@ -60,7 +60,12 @@ export default function SignUp() {
               type="password"
               id="password"
               autoComplete="new-password"
+              placeholder="8 or more characters"
               size="small"
+              inputProps={{
+                pattern: ".{8,}",
+                title: "Password must contain 8 or more characters",
+              }}
               value={values.user.password}
               onChange={onChange}
             />

@@ -26,10 +26,20 @@ const Tasks = () => {
           my: 2,
           overflow: "hidden",
           height: "100%",
+          gap: { xs: 3, sm: 0 },
         }}
       >
-        <Box display="flex" justifyContent="space-between">
-          <Typography component="h1" variant="h4">
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          flexDirection={{ xs: "column", sm: "row" }}
+          gap={{ xs: 3, sm: 1 }}
+        >
+          <Typography
+            component="h1"
+            variant="h4"
+            textAlign={{ xs: "center", sm: "left" }}
+          >
             Tasks
           </Typography>
           <Box display="flex" alignItems="center" gap={2}>
@@ -49,7 +59,7 @@ const Tasks = () => {
             </Select>
             <Button
               variant="contained"
-              sx={{ textTransform: "none" }}
+              sx={{ textTransform: "none", ml: { xs: "auto", sm: "none" } }}
               onClick={() => push(NewTaskPath)}
               size="large"
               color="warning"
