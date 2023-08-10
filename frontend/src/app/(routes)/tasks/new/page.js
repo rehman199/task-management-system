@@ -11,6 +11,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const CreateTaskForm = () => {
   const { values, loading, onChange, onSubmit } = useTask(
@@ -22,6 +23,7 @@ const CreateTaskForm = () => {
     },
     "create"
   );
+  const { back } = useRouter();
 
   return (
     <Container
@@ -79,6 +81,15 @@ const CreateTaskForm = () => {
         disabled={loading || !values.task.title || !values.task.status}
       >
         Create
+      </Button>
+      <Button
+        type="button"
+        fullWidth
+        variant="outlined"
+        color="warning"
+        onClick={() => back(() => back())}
+      >
+        Go Back
       </Button>
     </Container>
   );

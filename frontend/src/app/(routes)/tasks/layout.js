@@ -1,5 +1,4 @@
 "use client";
-
 import WithAuth from "@/app/HOCs/with-auth";
 
 function TaskLayout({ children }) {

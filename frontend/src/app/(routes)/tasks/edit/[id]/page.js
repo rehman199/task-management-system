@@ -21,7 +21,7 @@ const UpdateTaskForm = ({ params }) => {
   )[0];
 
   const { values, loading, onChange, onSubmit } = useTask({ task }, "update");
-  const { push } = useRouter();
+  const { push, back } = useRouter();
 
   useEffect(() => {
     if (!task) push("/");
@@ -83,6 +83,15 @@ const UpdateTaskForm = ({ params }) => {
         disabled={loading || !values.task.title || !values.task.status}
       >
         Update
+      </Button>
+      <Button
+        type="button"
+        fullWidth
+        variant="outlined"
+        color="warning"
+        onClick={() => back()}
+      >
+        Go Back
       </Button>
     </Container>
   ) : null;

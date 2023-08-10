@@ -27,6 +27,7 @@ export default function SignIn() {
           required
           fullWidth
           id="username"
+          title="username"
           label="Email Address"
           name="username"
           autoComplete="username"

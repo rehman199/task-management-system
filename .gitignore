@@ -6,7 +6,7 @@
 /backend/node_modules
 
 # testing
-/coverage
+/backend/coverage
 
 # next.js
 /frontend/.next/
