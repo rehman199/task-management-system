@@ -68,7 +68,7 @@ Before you begin, ensure you have the following prerequisites:
 
 ## Usage
 
-1. Start the development server for both the frontend and backend concurrently:
+1. While being in the root directory i.e task-management-system, start the development server for both the frontend and backend concurrently:
 
    ```bash
    npm run dev
